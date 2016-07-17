@@ -4,8 +4,9 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 
+
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://makan:password@ds023105.mlab.com:23105/tolomakan')
+mongoose.connect(process.env.MONGODB_URI)
 
 var routes = require('./routes/index')
 var app = express()
@@ -33,5 +34,7 @@ app.use(function (req, res, next) {
   err.status = 404
   next(err)
 })
+
+
 
 module.exports = app
