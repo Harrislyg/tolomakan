@@ -20,7 +20,7 @@ function getAllUsers (req, res) {
 }
 
 function getOneUser (req, res) {
-  User.findById(req.params.user_id, function (err, user) {
+  User.findById(req.params.id, function (err, user) {
     if (err) return res.status(404).json({error: '/user getOneUser error 1'})
     res.status(200).json(user)
   })
