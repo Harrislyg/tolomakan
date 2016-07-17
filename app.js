@@ -4,7 +4,6 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 
-
 var mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 
@@ -34,7 +33,5 @@ app.use(function (req, res, next) {
   err.status = 404
   next(err)
 })
-
-
 
 module.exports = app
