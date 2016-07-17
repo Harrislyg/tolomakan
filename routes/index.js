@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
   res.json({message: 'Hello'})
 })
 
-router.get('/signup', signInUpController.signUp)
+router.post('/signup', signInUpController.signUp)
 router.post('/signin', signInUpController.signIn)
 
 module.exports = router
