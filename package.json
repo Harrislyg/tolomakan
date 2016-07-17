@@ -5,7 +5,7 @@
   "scripts": {
     "start": "source .env; node ./bin/www",
     "dev": "source .env; nodemon ./bin/www",
-    "test": "mocha"
+    "test": "source .env;mocha"
   },
   "dependencies": {
       "bcrypt": "^0.8.7",
