@@ -4,16 +4,13 @@ const expect = require('chai').expect
 const supertest = require('supertest')
 const app = require('../app')
 // const port = process.env.PORT || 3000
-const api = supertest(`http://localhost:${process.env.PORT}`)
+const api = supertest('http://localhost:3000')
 
 describe('GET /', () => {
   it('should return a 200 response', (done) => {
     api.get('/')
     .set('Accept', 'application/json')
-    .end((error, response) => {
-      expect(error).to.be.a('null')
-      expect(response.body.message).to.equal('Hello')
-    })
+    .expect(200, done)
   })
 })
 
@@ -28,7 +25,7 @@ describe('POST /signup', () => {
         'password': '123456'
       }).end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body.message).to.equal('welcome! ')
+        done()
       })
   })
   it('should expect a 401 error due signup error', (done) => {
@@ -55,6 +52,7 @@ describe('POST /signin', function () {
       .end((error, response) => {
         expect(error).to.be.a('null')
         expect(response.body.message).to.equal('sign in success! welcome: Ariel')
+        done()
       })
   })
   it('should expect a 401 error due signup error', (done) => {
