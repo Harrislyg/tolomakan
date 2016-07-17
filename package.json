@@ -5,7 +5,11 @@
   "scripts": {
     "start": "source .env; node ./bin/www",
     "dev": "source .env; nodemon ./bin/www",
+<<<<<<< HEAD
     "test": "source .env; mocha"
+=======
+    "test": "source .env;mocha"
+>>>>>>> ab40f5a6655105eac925c429985406db444161d5
   },
   "dependencies": {
       "bcrypt": "^0.8.7",
