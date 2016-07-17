@@ -1,6 +1,6 @@
 const User = require('../models/user')
 
-function signUp(req, res) {
+function signUp (req, res) {
   const user = new User(req.body)
   console.log(req.body)
   user.save((err, user) => {

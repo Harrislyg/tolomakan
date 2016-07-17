@@ -11,10 +11,10 @@
 8 verbose lifecycle tolomakan@0.0.0~start: unsafe-perm in lifecycle true
 9 verbose lifecycle tolomakan@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/harrisleow/Desktop/GA_WDI/finalProject3/tolomakan/node_modules/.bin:/usr/local/Cellar/node/6.2.1/bin:/Users/harrisleow/.rvm/gems/ruby-2.3.0/bin:/Users/harrisleow/.rvm/gems/ruby-2.3.0@global/bin:/Users/harrisleow/.rvm/rubies/ruby-2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/harrisleow/.rvm/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
 10 verbose lifecycle tolomakan@0.0.0~start: CWD: /Users/harrisleow/Desktop/GA_WDI/finalProject3/tolomakan
-11 silly lifecycle tolomakan@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
+11 silly lifecycle tolomakan@0.0.0~start: Args: [ '-c', 'source .env; node app.js' ]
 12 silly lifecycle tolomakan@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle tolomakan@0.0.0~start: Failed to exec start script
-14 verbose stack Error: tolomakan@0.0.0 start: `node ./bin/www`
+14 verbose stack Error: tolomakan@0.0.0 start: `source .env; node app.js`
 14 verbose stack Exit status 1
 14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:245:16)
 14 verbose stack     at emitTwo (events.js:106:13)
@@ -31,14 +31,14 @@
 19 error node v6.2.1
 20 error npm  v3.9.3
 21 error code ELIFECYCLE
-22 error tolomakan@0.0.0 start: `node ./bin/www`
+22 error tolomakan@0.0.0 start: `source .env; node app.js`
 22 error Exit status 1
-23 error Failed at the tolomakan@0.0.0 start script 'node ./bin/www'.
+23 error Failed at the tolomakan@0.0.0 start script 'source .env; node app.js'.
 23 error Make sure you have the latest version of node.js and npm installed.
 23 error If you do, this is most likely a problem with the tolomakan package,
 23 error not with npm itself.
 23 error Tell the author that this fails on your system:
-23 error     node ./bin/www
+23 error     source .env; node app.js
 23 error You can get information on how to open an issue for this project with:
 23 error     npm bugs tolomakan
 23 error Or if that isn't available, you can get their info via:
