@@ -2,11 +2,12 @@
 
 const expect = require('chai').expect
 const supertest = require('supertest')
-const app = require('../app')
+const app = require('../bin/www')
 // const port = process.env.PORT || 3000
 const api = supertest('http://localhost:3000')
 
-describe('GET /', () => {
+describe('GET /', function () {
+  this.timeout(10000)
   it('should return a 200 response', (done) => {
     api.get('/')
     .set('Accept', 'application/json')
@@ -15,7 +16,8 @@ describe('GET /', () => {
 })
 
 // POST /signup
-describe('POST /signup', () => {
+describe('POST /signup', function () {
+  this.timeout(10000)
   it('should add an user and return it', (done) => {
     api.post('/signup')
       .set('Accept', 'application/json')
@@ -41,6 +43,7 @@ describe('POST /signup', () => {
 
 // POST /signin
 describe('POST /signin', function () {
+  this.timeout(10000)
   // it('should ')
   it('should return user name', (done) => {
     api.post('/signin')

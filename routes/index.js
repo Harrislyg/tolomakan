@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
 router.get('/makans', makanController.getAllMakans)
 router.post('/makans', makanController.makeNewMakan)
 router.route('/makans/:id')
-  .patch(userController.userLoggedIn, makanController.updateMakan)
+  .put(userController.userLoggedIn, makanController.updateMakan)
 router.get('/users', userController.getAllUsers)
 router.get('/users/:id', userController.getOneUser)
 
