@@ -5,7 +5,7 @@
   "scripts": {
     "start": "source .env; node ./bin/www",
     "dev": "source .env; nodemon ./bin/www",
-    "test": "source .env;mocha",
+    "test": "source .env; mocha",
     "seed": "source .env; node models/seed.js"
   },
   "dependencies": {
