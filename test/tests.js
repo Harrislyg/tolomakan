@@ -101,7 +101,7 @@ describe('GET /makans', () => {
         'name': 'Wolf Burgers',
         'latitude': 1.295401,
         'longitude': 103.858190,
-        'address': '3 Temasek Blvd, 444-445 / 448-450 Suntec City, Singapore 038983',
+        'address': '3 Temasek Blvd, 444-445 / 448-450 Suntec City, 038983',
         'type': 'Restaurant',
         'categories': 'Western',
         'price': 10
