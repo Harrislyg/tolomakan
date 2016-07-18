@@ -17,8 +17,10 @@ function makeNewMakan (req, res) {
 }
 // get one makan place by id
 function getOneMakan (req, res) {
-  User.findById(req.params.id, function (err, makan) {
+  const id = req.params.id
+  Makan.findById({_id: id}, function (err, makan) {
     if (err) return res.status(401).json({error: '/get getOneMakan error 1'})
+    console.log(makan)
     res.status(200).json(makan)
   })
 }
@@ -26,7 +28,7 @@ function getOneMakan (req, res) {
 function updateMakan (req, res) {
   const id = req.params.id
   Makan.findById({_id: id}, function (err, makan) {
-    if (err) return res.status(401).json({error: '/get updateMakan error'})
+    if (err || !makan) return res.status(401).json({error: '/get updateMakan error'})
     makan.name = req.body.name
     makan.latitude = req.body.latitude
     makan.longitude = req.body.longitude

@@ -7,6 +7,7 @@ const MakanSchema = new mongoose.Schema({
   address: String,
   type: String,
   categories: String,
+  mapId: String,
   price: Number
 })
 

@@ -1,4 +1,4 @@
-/* globals  describe it */
+/* globals describe before it */
 
 const expect = require('chai').expect
 const supertest = require('supertest')
@@ -78,80 +78,85 @@ describe('POST /signin', function () {
   })
 })
 
-// // GET all makans
-// describe('GET /makans', () => {
-//   it('should return a 200 response', (done) => {
-//     api.get('/makans')
-//     .set('Accept', 'application/json')
-//     .expect(200, done)
-//   })
-//   it('should return an array', (done) => {
-//     api.get('/makans')
-//     .set('Accept', 'application/json')
-//     .end((error, response) => {
-//       expect(error).to.be.a('null')
-//       // expecting the get makan routes to return an array
-//       expect(response.body).to.be.an('array')
-//       done()
-//     })
-//   })
-//   // POST /makans
-//   describe('POST /makans', () => {
-//     it('should return a 200 response', (done) => {
-//       api.post('/makans')
-//       .set('Accept', 'application/json')
-//       .send({
-//         'name': 'Wolf Burgers',
-//         'latitude': 1.295401,
-//         'longitude': 103.858190,
-//         'address': '3 Temasek Blvd, 444-445 / 448-450 Suntec City, 038983',
-//         'type': 'Restaurant',
-//         'categories': 'Western',
-//         'price': 10
-//       })
-//       .expect(200, done)
-//     })
-//     // Unable to test for 401
-//     // it('should return a 401 response when posting is unsuccessful due to wrong input format', (done) => {
-//     //   api.post('/makans')
-//     //   .set('Accept', 'application/json')
-//     //   .send({
-//     //     'name': 'Jack Burger',
-//     //     'latitude': '1314124',
-//     //     'longitude': '1231415',
-//     //     'price': '10'
-//     //   })
-//     //   .expect(401, done)
-//     // })
-//   })
-// })
-// // GET /makans/:id
-// describe('GET /makans/:id', function () {
-//   this.timeout(10000)
-//   it('should return a 200 response', (done) => {
-//     api.get('/makans/578b5967e55ce4c6508c3bc9')
-//     .set('Accept', 'application/json')
-//     .expect(200, done)
-//   })
-// })
-// // PUT /makans/:id
-// describe('PUT /makans/:id', function () {
-//   this.timeout(10000)
-//   it('should return a 200 response', (done) => {
-//     api.put('/makans/578b5967e55ce4c6508c3bc9')
-//     .set('Accept', 'application/json')
-//     .send({
-//       'price': 10
-//     })
-//     .expect(200, done)
-//   })
-//   it('should update a makan place', (done) => {
-//     api.get('/makans/578b5967e55ce4c6508c3bc9')
-//     .set('Accept', 'application/json')
-//     .end((error, response) => {
-//       expect(error).to.be.a('null')
-//       expect(response.body.price).to.equal(10)
-//       done()
-//     })
-//   })
-// })
+// GET all makans
+describe('GET /makans', () => {
+  it('should return a 200 response', (done) => {
+    api.get('/makans')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+  it('should return an array', (done) => {
+    api.get('/makans')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      expect(error).to.be.a('null')
+      // expecting the get makan routes to return an array
+      expect(response.body).to.be.an('array')
+      done()
+    })
+  })
+  // POST /makans
+  describe('POST /makans', () => {
+    it('should return a 200 response', (done) => {
+      api.post('/makans')
+      .set('Accept', 'application/json')
+      .send({
+        'name': 'Wolf Burgers',
+        'latitude': 1.295401,
+        'longitude': 103.858190,
+        'address': '3 Temasek Blvd, 444-445 / 448-450 Suntec City, 038983',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'price': 10
+      })
+      .expect(200, done)
+    })
+  })
+})
+// GET /makans/:id
+describe('GET /makans/:id', function () {
+  this.timeout(10000)
+  it('should return a 200 response', (done) => {
+    api.get('/makans/578b5967e55ce4c6508c3bc9')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+})
+// PUT /makans/:id
+describe('PUT /makans/:id', function () {
+  var email = 'shihqian@gmail.com'
+  var auth_token
+  this.timeout(10000)
+  before((done) => {
+    api.post('/signin')
+    .set('Accept', 'application/json')
+    .send({
+      'email': email,
+      'password': '123456'
+    }).end(function (error, response) {
+      if (error) return response.status(401).json({ error: 'authentication not found' })
+      auth_token = response.body.auth_token
+      done()
+    })
+  })
+  it('should return a 200 response', (done) => {
+    api.put('/makans/578b5967e55ce4c6508c3bc9')
+    .set('Accept', 'application/json')
+    .set('User-Email', email)
+    .set('Auth-Token', auth_token)
+    .send({
+      'name': 'Xi Xiang Feng Yong Tau Fu',
+      'price': 10
+    })
+    .expect(200, done)
+  })
+  it('should update a makan place', (done) => {
+    api.get('/makans/578b5967e55ce4c6508c3bc9')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      expect(error).to.be.a('null')
+      expect(response.body.price).to.equal(10)
+      done()
+    })
+  })
+})
