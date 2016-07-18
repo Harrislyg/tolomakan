@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "source .env; node ./bin/www",
+    "start": "node ./bin/www",
+    "localstart": "source .env; node ./bin/www",
     "dev": "source .env; nodemon ./bin/www",
-    "test": "source .env; mocha",
+    "test": "mocha",
+    "localtest": "source .env; mocha",
     "seed": "source .env; node models/seed.js"
   },
   "dependencies": {
