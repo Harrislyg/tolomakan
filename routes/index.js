@@ -20,7 +20,7 @@ router.route('/makans')
 .get(makanController.getAllMakans)
 .post(makanController.makeNewMakan)
 
-router.get('/makans/:categories', makanController.getRandom)
+router.get('/random/:categories', makanController.getRandom)
 
 router.route('/makans/:id')
 .get(makanController.getOneMakan)
