@@ -53,21 +53,22 @@ function deleteMakan (req, res) {
     })
   })
 }
-
-// function deletePost (req, res) {
-//   const postId = req.params.id
-//   var post = req.currentUser.posts.id(postId)
-//   req.currentUser.posts.pull(post)
-//   req.currentUser.save((err) => {
-//     if (err) return res.status(401).json({error: err})
-//     res.status(200).json({message: 'Post deleted!'})
-//   })
-// }
+function getRandom (req, res) {
+  const categories = req.params.categories
+  console.log(categories)
+  Makan.find({categories: categories}, function (err, makan) {
+    if (err) return res.status(401).json({ error: 'undefined category' })
+    const foundMakan = makan[parseInt(Math.random() * makan.length)]
+    console.log(foundMakan)
+    res.status(200).json({message: 'Makan found', foundMakan})
+  })
+}
 
 module.exports = {
   getAllMakans: getAllMakans,
   makeNewMakan: makeNewMakan,
   getOneMakan: getOneMakan,
   updateMakan: updateMakan,
-  deleteMakan: deleteMakan
+  deleteMakan: deleteMakan,
+  getRandom: getRandom
 }
