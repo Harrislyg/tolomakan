@@ -58,7 +58,7 @@ function getRandom (req, res) {
   console.log(categories)
   Makan.find({categories: categories}, function (err, makan) {
     if (err) return res.status(401).json({ error: 'undefined category' })
-    const foundMakan = makan[Math.random() * makan.length]
+    const foundMakan = makan[parseInt(Math.random() * makan.length)]
     res.status(200).json({message: 'Makan found', foundMakan})
     console.log(makan)
   })
