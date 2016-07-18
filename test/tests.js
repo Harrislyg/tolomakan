@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect
 const supertest = require('supertest')
-const app = require('../app')
+const app = require('../bin/www')
 // const port = process.env.PORT || 3000
 const api = supertest('http://localhost:3000')
 
