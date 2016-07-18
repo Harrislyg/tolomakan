@@ -69,8 +69,56 @@ describe('POST /signin', function () {
     .set('Accept', 'application/json')
     .send({
       'email': 'shihqian@gmail.com',
-      'password': '123456'
+      'password': '13212412'
     })
     .expect(401, done)
+  })
+})
+
+// GET all makans
+describe('GET /makans', () => {
+  it('should return a 200 response', (done) => {
+    api.get('/makans')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+  it('should return an array', (done) => {
+    api.get('/makans')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      expect(error).to.be.a('null')
+      // expecting the get makan routes to return an array
+      expect(response.body).to.be.an('array')
+      done()
+    })
+  })
+  // POST /makans
+  describe('POST /makans', () => {
+    it('should return a 200 response', (done) => {
+      api.post('/makans')
+      .set('Accept', 'application/json')
+      .send({
+        'name': 'Wolf Burgers',
+        'latitude': 1.295401,
+        'longitude': 103.858190,
+        'address': '3 Temasek Blvd, 444-445 / 448-450 Suntec City, Singapore 038983',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'price': 10
+      })
+      .expect(200, done)
+    })
+    // Unable to test for 401
+    // it('should return a 401 response when posting is unsuccessful due to wrong input format', (done) => {
+    //   api.post('/makans')
+    //   .set('Accept', 'application/json')
+    //   .send({
+    //     'name': 'Jack Burger',
+    //     'latitude': '1314124',
+    //     'longitude': '1231415',
+    //     'price': '10'
+    //   })
+    //   .expect(401, done)
+    // })
   })
 })
