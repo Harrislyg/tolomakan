@@ -117,7 +117,7 @@ describe('GET /makans', () => {
 describe('GET /makans/:id', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
-    api.get('/makans/578b5967e55ce4c6508c3bc9')
+    api.get('/makans/578c9c33a24cdb27a1e796a3')
     .set('Accept', 'application/json')
     .expect(200, done)
   })
@@ -140,18 +140,18 @@ describe('PUT /makans/:id', function () {
     })
   })
   it('should return a 200 response', (done) => {
-    api.put('/makans/578b5967e55ce4c6508c3bc9')
+    api.put('/makans/578c9c33a24cdb27a1e796a3')
     .set('Accept', 'application/json')
     .set('User-Email', email)
     .set('Auth-Token', auth_token)
     .send({
-      'name': 'Xi Xiang Feng Yong Tau Fu',
+      'name': 'Wolfffffssss Burger',
       'price': 10
     })
     .expect(200, done)
   })
   it('should update a makan place', (done) => {
-    api.get('/makans/578b5967e55ce4c6508c3bc9')
+    api.get('/makans/578c9c33a24cdb27a1e796a3')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
