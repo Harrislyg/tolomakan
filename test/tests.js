@@ -154,6 +154,7 @@ describe('PUT /makans/:id', function () {
     api.get('/makans/578c9c33a24cdb27a1e796a3')
     .set('Accept', 'application/json')
     .end((error, response) => {
+      console.log(response.body)
       expect(error).to.be.a('null')
       expect(response.body.price).to.equal(10)
       done()
