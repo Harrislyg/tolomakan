@@ -15,8 +15,9 @@ function signIn (req, res) {
   User.findOne({email: userParams.email}, (err, user) => {
     if (err || !user) return res.status(401).json({error: '/signin error 1'})
     user.authenticate(userParams.password, (err, isMatch) => {
-      if (err) return res.status(401).json({err: '/signin error 2'})
-      res.status(200).json({message: 'sign in success! welcome: ' + user.name})
+      console.log(isMatch)
+      if (!isMatch) return res.status(401).json({err: '/signin error 2'})
+      res.status(200).json(user)
     })
   })
 }
