@@ -16,8 +16,6 @@ router.get('/makans', makanController.getAllMakans)
 router.post('/makans', makanController.makeNewMakan)
 router.route('/makans/:id')
   .put(userController.userLoggedIn, makanController.updateMakan)
-
-
 router.get('/users', userController.getAllUsers)
 router.get('/users/:id', userController.getOneUser)
 

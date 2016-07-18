@@ -45,15 +45,23 @@ function getAllPostsOfOneUser (req, res) {
 // }
 //
 function updateMakan (req, res) {
-  const makanId = req.params.id
-  var makan = req.currentUser.posts.id(makanId)
-  post.title = req.body.title
-  post.body = req.body.body
-  req.currentUser.save((err) => {
-    if (err) return res.status(401).json({error: err})
-    res.status(200).json({message: 'Post updated', post})
+  const id = req.params.id
+  Makan.findById({_id: id}, function (err, makan) {
+    if (err) return res.status(401).json({error: '/get updateMakan error'})
+    makan.name = req.body.name
+    makan.latitude = req.body.latitude
+    makan.longitude = req.body.longitude
+    makan.address = req.body.address
+    makan.type = req.body.type
+    makan.categories = req.body.categories
+    makan.price = req.body.price
+    makan.save((err) => {
+      if (err) return res.status(401).json({error: err})
+      res.status(200).json({message: 'Makan updated', makan})
+    })
   })
 }
+
 //
 // function deletePost (req, res) {
 //   const postId = req.params.id
@@ -67,6 +75,7 @@ function updateMakan (req, res) {
 
 module.exports = {
   getAllMakans: getAllMakans,
-  makeNewMakan: makeNewMakan
+  makeNewMakan: makeNewMakan,
+  updateMakan: updateMakan
 
 }
