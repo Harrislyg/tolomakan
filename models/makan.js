@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const MakanSchema = new mongoose.Schema({
-  name: String,
+  name: {type: String, require: true, unique: true},
   latitude: Number,
   longitude: Number,
   address: String,
