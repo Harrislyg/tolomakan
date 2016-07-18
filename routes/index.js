@@ -17,7 +17,7 @@ router.route('/makans')
 .post(makanController.makeNewMakan)
 
 router.route('/makans/:id')
-.get(userController.userLoggedIn, makanController.getOneMakan)
+.get(makanController.getOneMakan)
 .put(userController.userLoggedIn, makanController.updateMakan)
 .delete(userController.userLoggedIn, makanController.deleteMakan)
 
