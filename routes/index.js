@@ -12,10 +12,15 @@ router.get('/', function (req, res, next) {
   res.json({message: 'Hello'})
 })
 
-router.get('/makans', makanController.getAllMakans)
-router.post('/makans', makanController.makeNewMakan)
+router.route('/makans')
+.get(makanController.getAllMakans)
+.post(makanController.makeNewMakan)
+
 router.route('/makans/:id')
-  .put(userController.userLoggedIn, makanController.updateMakan)
+.get(userController.userLoggedIn, makanController.getOneMakan)
+.put(userController.userLoggedIn, makanController.updateMakan)
+.delete(userController.userLoggedIn, makanController.deleteMakan)
+
 router.get('/users', userController.getAllUsers)
 router.get('/users/:id', userController.getOneUser)
 

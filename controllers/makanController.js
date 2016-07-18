@@ -1,13 +1,13 @@
 const Makan = require('../models/makan')
 const User = require('../models/user')
-
+// show all makans
 function getAllMakans (req, res) {
   Makan.find({}, function (err, makansArray) {
     if (err) return res.status(401).json({error: '/getAllMakans error'})
     res.status(200).json(makansArray)
   })
 }
-
+// create a new makan
 function makeNewMakan (req, res) {
   const makan = new Makan(req.body)
   makan.save((err, makan) => {
@@ -15,35 +15,14 @@ function makeNewMakan (req, res) {
     res.status(200).json({message: 'makan created!', makan})
   })
 }
-
-function getAllPostsOfOneUser (req, res) {
-  User.findById(req.params.user_id, function (err, user) {
-    if (err) return res.status(401).json({error: '/get getAllPostsOfOneUser error 1'})
-    res.status(200).json(user.posts)
+// get one makan place by id
+function getOneMakan (req, res) {
+  User.findById(req.params.id, function (err, makan) {
+    if (err) return res.status(401).json({error: '/get getOneMakan error 1'})
+    res.status(200).json(makan)
   })
 }
-
-// function getOnePostOfOneUser (req, res) {
-//   const postId = req.params.id
-//   User.findById(req.params.user_id, function (err, user) {
-//     if (err) return res.status(401).json({error: '/get getOnePostOfOneUser error 1'})
-//     const post = user.posts.id(postId)
-//     res.status(200).json(post)
-//   })
-//
-//   Post.findById(req.params.id, function (err, post) {
-//     if (err) console.log({message: 'no post found'})
-//     res.status(200).json(post)
-//   })
-// }
-//
-// // needs to be fixed. can't access posts which are nested inside uesrs
-// function getPostById (req, res) {
-//   const postId = req.params.id
-//   const post = req.currentUser.posts.id(postId)
-//   res.status(200).json(post)
-// }
-//
+// update a makan place by id
 function updateMakan (req, res) {
   const id = req.params.id
   Makan.findById({_id: id}, function (err, makan) {
@@ -61,8 +40,18 @@ function updateMakan (req, res) {
     })
   })
 }
+// delete a makan place by id
+function deleteMakan (req, res) {
+  Makan.findById(req.params.id, function (err, makan) {
+    if (err) return res.status(401).json({ error: '/get Makan error' })
+    makan.pull()
+    makan.save((err) => {
+      if (err) return res.status(401).json({error: err})
+      res.status(200).json({message: 'Makan deleted', makan})
+    })
+  })
+}
 
-//
 // function deletePost (req, res) {
 //   const postId = req.params.id
 //   var post = req.currentUser.posts.id(postId)
@@ -76,6 +65,7 @@ function updateMakan (req, res) {
 module.exports = {
   getAllMakans: getAllMakans,
   makeNewMakan: makeNewMakan,
-  updateMakan: updateMakan
-
+  getOneMakan: getOneMakan,
+  updateMakan: updateMakan,
+  deleteMakan: deleteMakan
 }
