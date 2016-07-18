@@ -12,12 +12,18 @@ router.get('/', function (req, res, next) {
   res.json({message: 'Hello'})
 })
 
+router.get('/map', function (req, res, next) {
+  res.render('map')
+})
+
 router.route('/makans')
 .get(makanController.getAllMakans)
 .post(makanController.makeNewMakan)
 
+router.get('/:categories', makanController.getRandom)
+
 router.route('/makans/:id')
-.get(userController.userLoggedIn, makanController.getOneMakan)
+.get(makanController.getOneMakan)
 .put(userController.userLoggedIn, makanController.updateMakan)
 .delete(userController.userLoggedIn, makanController.deleteMakan)
 
