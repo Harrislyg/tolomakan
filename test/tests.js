@@ -20,24 +20,24 @@ describe('POST /signup', function () {
   this.timeout(10000)
   it('should add an user and return it', (done) => {
     api.post('/signup')
-      .set('Accept', 'application/json')
-      .send({
-        'name': 'Ariel',
-        'email': 'shihqian@gmail.com',
-        'password': '123456'
-      }).end((error, response) => {
-        expect(error).to.be.a('null')
-        done()
-      })
+    .set('Accept', 'application/json')
+    .send({
+      'name': 'Ariel',
+      'email': 'shihqian@gmail.com',
+      'password': '123456'
+    }).end((error, response) => {
+      expect(error).to.be.a('null')
+      done()
+    })
   })
   it('should expect a 401 error due signup error', (done) => {
     api.post('/signup')
-      .set('Accept', 'application/json')
-      .send({
-        'name': 'James',
-        'email': 'xxx@yzz.com'
-      })
-      .expect(401, done)
+    .set('Accept', 'application/json')
+    .send({
+      'name': 'James',
+      'email': 'xxx@yzz.com'
+    })
+    .expect(401, done)
   })
 })
 
@@ -46,25 +46,25 @@ describe('POST /signin', function () {
   // it('should ')
   it('should return user name', (done) => {
     api.post('/signin')
-      .set('Accept', 'application/json')
-      .send({
-        'email': 'shihqian@gmail.com',
-        'password': '123456'
-      })
-      .end((error, response) => {
-        expect(error).to.be.a('null')
-        expect(response.body.name).to.equal('Ariel')
-        done()
-      })
+    .set('Accept', 'application/json')
+    .send({
+      'email': 'shihqian@gmail.com',
+      'password': '123456'
+    })
+    .end((error, response) => {
+      expect(error).to.be.a('null')
+      expect(response.body.name).to.equal('Ariel')
+      done()
+    })
   })
   it('should expect a 401 error due signup error', (done) => {
     api.post('/signin')
-      .set('Accept', 'application/json')
-      .send({
-        'email': 'xxx@yzz.com',
-        'password': '123456'
-      })
-      .expect(401, done)
+    .set('Accept', 'application/json')
+    .send({
+      'email': 'xxx@yzz.com',
+      'password': '123456'
+    })
+    .expect(401, done)
   })
   it('should expect another 401 error due to incorrect password', (done) => {
     api.post('/signin')
@@ -94,7 +94,6 @@ describe('GET /makans', function () {
       done()
     })
   })
-
   describe('POST /makans', () => {
     var email = 'shihqian@gmail.com'
     var auth_token
@@ -158,29 +157,33 @@ describe('PUT /makans/:id', function () {
     })
   })
   it('should return a 200 response', (done) => {
-    api.put('/makans/578d74e6c7096270ae4621cc')
+    api.put('/makans/578e03e10d57c98311936738')
     .set('Accept', 'application/json')
     .set('User-Email', email)
     .set('Auth-Token', auth_token)
     .send({
-      'name': 'Hua Soon Western Food',
-      'latitude': 1.310318,
-      'longitude': 103.795231,
-      'address': '30 Lorong Mambong, 277688',
-      'type': 'Hawker',
+      'name': 'The Populus Coffee & Food Co.',
+      'loc': [
+        103.84075,
+        1.278195
+      ],
+      'latitude': 1.278195,
+      'longitude': 103.84075,
+      'address': '146 Neil Rd, 088875',
+      'type': 'Cafe',
       'categories': 'Western',
-      'mapId': 'ChIJVeEulmsa2jERZWfzcKz3ABM',
-      'price': 5
+      'mapId': 'ChIJIQ0quW0Z2jERoyEo9Sbz8pY',
+      'price': 25
     })
     .expect(200, done)
   })
   it('should update a makan place', (done) => {
-    api.get('/makans/578d74e6c7096270ae4621cc')
+    api.get('/makans/578e03e10d57c98311936738')
     .set('Accept', 'application/json')
     .end((error, response) => {
       // console.log(response.body)
       expect(error).to.be.a('null')
-      expect(response.body.price).to.equal(5)
+      expect(response.body.price).to.equal(25)
       done()
     })
   })
