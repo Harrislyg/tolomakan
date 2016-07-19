@@ -66,6 +66,9 @@ function getFive (req, res) {
     latitude: req.body.lat,
     longitude: req.body.lng
   }
+
+  Makan.where('loc')
+
   Makan.find({}, function (err, makan) {
     var makanArray = []
     makan.forEach(function (makanCat) {
