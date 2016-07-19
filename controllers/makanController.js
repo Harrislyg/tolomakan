@@ -67,9 +67,8 @@ function getFive (req, res) {
     latitude: req.body.lat,
     longitude: req.body.lng
   }
-
-  Makan.where('loc')
-
+  var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  console.log(list)
   Makan.find({}, function (err, makan) {
     if (err) return res.status(401).json({ error: 'cannot get Five' })
     var makanArray = []
