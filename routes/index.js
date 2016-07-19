@@ -8,13 +8,13 @@ const signInUpController = require('../controllers/signInUpController')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  console.log('hello')
+  // console.log('hello')
   res.json({message: 'Hello'})
 })
 
 router.route('/makans')
 .get(makanController.getAllMakans)
-.post(makanController.makeNewMakan)
+.post(userController.userLoggedIn, makanController.makeNewMakan)
 
 router.get('/random/:categories', makanController.getRandom)
 
