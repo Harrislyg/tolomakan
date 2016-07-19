@@ -62,6 +62,10 @@ function getRandom (req, res) {
   })
 }
 function getFive (req, res) {
+  var geolocation = {
+    latitude: req.body.lat,
+    longitude: req.body.lng
+  }
   Makan.find({}, function (err, makan) {
     var makanArray = []
     makan.forEach(function (makanCat) {
