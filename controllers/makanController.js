@@ -3,6 +3,7 @@ const User = require('../models/user')
 // show all makans
 function getAllMakans (req, res) {
   Makan.find({}, function (err, makansArray) {
+    // calculate the distance between the two location
     if (err) return res.status(401).json({error: '/getAllMakans error'})
     res.status(200).json(makansArray)
   })
@@ -70,6 +71,7 @@ function getFive (req, res) {
   Makan.where('loc')
 
   Makan.find({}, function (err, makan) {
+    if (err) return res.status(401).json({ error: 'cannot get Five' })
     var makanArray = []
     makan.forEach(function (makanCat) {
       makanArray.push(makanCat.categories)
@@ -77,8 +79,10 @@ function getFive (req, res) {
     function onlyUnique (value, index, self) {
       return self.indexOf(value) === index
     }
-    function shuffle(array) {
-      var currentIndex = array.length, temporaryValue, randomIndex
+    function shuffle (array) {
+      var currentIndex = array.length
+      var temporaryValue
+      var randomIndex
 
   // While there remain elements to shuffle...
       while (currentIndex !== 0) {
@@ -98,13 +102,13 @@ function getFive (req, res) {
     var randomUnique = shuffle(uniqueMakanCat)
     var foundMakan
     var results = []
-    for(var x in randomUnique) {
+    for (var x in randomUnique) {
       Makan.find({categories: randomUnique[x]}, function (err, makan) {
         if (err) return res.status(401).json({ error: 'undefined category' })
         foundMakan = makan[parseInt(Math.random() * makan.length)]
         results.push(foundMakan)
-        console.log("This is results",results)
-        if(results.length === 5) {
+        console.log('This is results', results)
+        if (results.length === 5) {
           res.status(200).json(results)
         }
       })
@@ -136,7 +140,6 @@ function getFive (req, res) {
   //     // console.log(i)
   // })
   // res.status(200).json(foundMakan1)
-
 }
 
 module.exports = {
