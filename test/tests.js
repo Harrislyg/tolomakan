@@ -186,8 +186,22 @@ describe('PUT /makans/:id', function () {
 })
 
 describe('DELETE /makans/:id', function () {
-  this.timeout(10000)
+  var auth_token
   var id
+  var email = 'jus@email.com'
+  this.timeout(10000)
+  before((done) => {
+    api.post('/signin')
+    .set('Accept', 'application/json')
+    .send({
+      'email': email,
+      'password': '123456'
+    }).end(function (error, response) {
+      if (error) return response.status(401).json({ error: 'authentication not found' })
+      auth_token = response.body.auth_token
+      done()
+    })
+  })
   it('should remove a makan-place', (done) => {
     Makan.find({name: 'Wolf Burgers'}, function (error, makan) {
       if (error) return makan.status(401).json({ error: 'cannot be deleted' })
@@ -195,6 +209,8 @@ describe('DELETE /makans/:id', function () {
       console.log(id)
       api.delete('/makans/' + id)
       .set('Accept', 'application/json')
+      .set('User-Email', email)
+      .set('Auth-Token', auth_token)
       .end(done)
     })
   })
