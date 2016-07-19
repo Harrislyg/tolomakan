@@ -63,12 +63,13 @@ function getRandom (req, res) {
   })
 }
 function getFive (req, res) {
-  var geolocation = {
-    latitude: req.body.lat,
-    longitude: req.body.lng
-  }
-  var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
-  console.log(list)
+  // var geolocation = {
+  //   latitude: req.body.lat,
+  //   longitude: req.body.lng
+  // }
+  // var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  // res.status(200).json(list)
+
   Makan.find({}, function (err, makan) {
     if (err) return res.status(401).json({ error: 'cannot get Five' })
     var makanArray = []
@@ -141,6 +142,15 @@ function getFive (req, res) {
   // res.status(200).json(foundMakan1)
 }
 
+function getFiveRandom (req, res) {
+  var geolocation = {
+    latitude: req.body.lat,
+    longitude: req.body.lng
+  }
+  var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  res.status(200).json(list)
+}
+
 module.exports = {
   getAllMakans: getAllMakans,
   makeNewMakan: makeNewMakan,
@@ -148,5 +158,6 @@ module.exports = {
   updateMakan: updateMakan,
   deleteMakan: deleteMakan,
   getRandom: getRandom,
-  getFive: getFive
+  getFive: getFive,
+  getFiveRandom: getFiveRandom
 }
