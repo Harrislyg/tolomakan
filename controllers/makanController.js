@@ -20,7 +20,7 @@ function getOneMakan (req, res) {
   const id = req.params.id
   Makan.findById({_id: id}, function (err, makan) {
     if (err) return res.status(401).json({error: '/get getOneMakan error 1'})
-    console.log(makan)
+    // console.log(makan)
     res.status(200).json(makan)
   })
 }
@@ -44,23 +44,21 @@ function updateMakan (req, res) {
 }
 // delete a makan place by id
 function deleteMakan (req, res) {
-  Makan.findById(req.params.id, function (err, makan) {
-    if (err) return res.status(401).json({ error: '/get Makan error' })
-    makan.pull()
-    makan.save((err) => {
-      if (err) return res.status(401).json({error: err})
-      res.status(200).json({message: 'Makan deleted', makan})
-    })
+  let id = req.params.id
+
+  Makan.remove({_id: id}, (err) => {
+    if (err) return res.json({message: 'could not delete post b/c: ' + err})
+    res.status(200).json({message: 'Makan successfully deleted'})
   })
 }
 function getRandom (req, res) {
   const categories = req.params.categories
-  console.log(categories)
+  // console.log(categories)
   Makan.find({categories: categories}, function (err, makan) {
     if (err) return res.status(401).json({ error: 'undefined category' })
     const foundMakan = makan[parseInt(Math.random() * makan.length)]
     res.status(200).json({message: 'Makan found', foundMakan})
-    console.log(makan)
+    // console.log(makan)
   })
 }
 
