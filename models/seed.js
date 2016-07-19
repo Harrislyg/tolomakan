@@ -21,7 +21,7 @@ var data = [
     'documents': [
       {
         'name': 'Xi Xiang Feng Yong Tau Fu',
-        'loc': [1.372184, 103.846598],
+        'loc': [103.846598, 1.372184],
         'latitude': 1.372184,
         'longitude': 103.846598,
         'address': '#01-23, Ang Mo Kio Food Centre, 724 Ang Mo Kio Avenue 6, 560724',
