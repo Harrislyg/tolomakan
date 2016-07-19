@@ -17,6 +17,7 @@ router.route('/makans')
 .post(userController.userLoggedIn, makanController.makeNewMakan)
 
 router.get('/random/:categories', makanController.getRandom)
+router.get('/random', makanController.getFive)
 
 router.route('/makans/:id')
 .get(makanController.getOneMakan)
