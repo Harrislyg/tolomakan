@@ -158,28 +158,29 @@ describe('PUT /makans/:id', function () {
     })
   })
   it('should return a 200 response', (done) => {
-    api.put('/makans/578d7cb0eb375e30b05cce6f')
+    api.put('/makans/578d74e6c7096270ae4621cc')
     .set('Accept', 'application/json')
     .set('User-Email', email)
     .set('Auth-Token', auth_token)
     .send({
-      'name': 'Wolf Burgers',
-      'latitude': 1.295401,
-      'longitude': 103.85819,
-      'address': '3 Temasek Blvd, 444-445 / 448-450 Suntec City, 038983',
-      'type': 'Restaurant',
+      'name': 'Hua Soon Western Food',
+      'latitude': 1.310318,
+      'longitude': 103.795231,
+      'address': '30 Lorong Mambong, 277688',
+      'type': 'Hawker',
       'categories': 'Western',
-      'price': 10
+      'mapId': 'ChIJVeEulmsa2jERZWfzcKz3ABM',
+      'price': 5
     })
     .expect(200, done)
   })
   it('should update a makan place', (done) => {
-    api.get('/makans/578d7cb0eb375e30b05cce6f')
+    api.get('/makans/578d74e6c7096270ae4621cc')
     .set('Accept', 'application/json')
     .end((error, response) => {
       // console.log(response.body)
       expect(error).to.be.a('null')
-      expect(response.body.price).to.equal(10)
+      expect(response.body.price).to.equal(5)
       done()
     })
   })
