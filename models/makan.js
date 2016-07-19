@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const MakanSchema = new mongoose.Schema({
   name: { type: String, require: true, unique: true },
-  loc: { type: [Number], index: true },
+  loc: { type: [Number], index: '2dsphere' },
   latitude: Number,
   longitude: Number,
   address: String,
