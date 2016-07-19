@@ -12,10 +12,6 @@ router.get('/', function (req, res, next) {
   res.json({message: 'Hello'})
 })
 
-router.get('/map', function (req, res, next) {
-  res.render('map')
-})
-
 router.route('/makans')
 .get(makanController.getAllMakans)
 .post(userController.userLoggedIn, makanController.makeNewMakan)
