@@ -105,8 +105,9 @@ function getFive (req, res) {
     for (var x in randomUnique) {
       Makan.find({categories: randomUnique[x]}, function (err, makan) {
         if (err) return res.status(401).json({ error: 'undefined category' })
-        console.log(makan)
-        res.status(200).json({message: 'Makan found', makan})
+        foundMakan = makan[parseInt(Math.random() * makan.length)]
+        results.push(foundMakan)
+        console.log('This is results', results)
         if (results.length === 5) {
           res.status(200).json(results)
         }
