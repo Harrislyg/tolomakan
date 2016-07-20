@@ -1,5 +1,27 @@
 const Makan = require('../models/makan')
 // const User = require('../models/user')
+function onlyUnique (value, index, self) {
+  return self.indexOf(value) === index
+}
+function shuffle (array) {
+  var currentIndex = array.length
+  var temporaryValue
+  var randomIndex
+
+// While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+// Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex -= 1
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temporaryValue
+  }
+
+  return array
+}
 // show all makans
 function getAllMakans (req, res) {
   Makan.find({}, function (err, makansArray) {
@@ -76,28 +98,7 @@ function getFive (req, res) {
     makan.forEach(function (makanCat) {
       makanArray.push(makanCat.categories)
     })
-    function onlyUnique (value, index, self) {
-      return self.indexOf(value) === index
-    }
-    function shuffle (array) {
-      var currentIndex = array.length
-      var temporaryValue
-      var randomIndex
 
-  // While there remain elements to shuffle...
-      while (currentIndex !== 0) {
-    // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex)
-        currentIndex -= 1
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex]
-        array[currentIndex] = array[randomIndex]
-        array[randomIndex] = temporaryValue
-      }
-
-      return array
-    }
     var uniqueMakanCat = makanArray.filter(onlyUnique)
     var randomUnique = shuffle(uniqueMakanCat)
     var foundMakan
@@ -124,11 +125,25 @@ function getFiveRandom (req, res) {
   console.log(req.query)
 
   Makan.where('loc')
-  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 10/6371})
   .exec(function (err, result) {
     if (err) return res.status(401).json({ error: 'undefined category' })
-    console.log('result:',result)
-    res.status(200).json(result)
+    console.log('result:', result)
+    var makansArray = []
+    result.forEach(function (makan) {
+      makansArray.push(makan.categories)
+    })
+    var uniqueMakansCat = makansArray.filter(onlyUnique)
+    var randomUniqueMakansCat = shuffle(uniqueMakansCat)
+    var foundMakans
+    var results = []
+    for (var x in randomUniqueMakansCat) {
+      var singleCat = result.filter(function (makanObject) {
+        return makanObject.categories === randomUniqueMakansCat[x]
+      })
+      results.push(singleCat[parseInt(Math.random() * singleCat.length)])
+    }
+    res.status(200).json(results)
   })
 }
 
