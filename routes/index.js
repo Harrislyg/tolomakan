@@ -29,8 +29,14 @@ router.route('/makans/:id')
 .put(userController.userLoggedIn, makanController.updateMakan)
 .delete(userController.userLoggedIn, makanController.deleteMakan)
 
-router.get('/users', userController.getAllUsers)
-router.get('/users/:id', userController.getOneUser)
+router.route('/users')
+.get(userController.getAllUsers)
+.delete(userController.deleteUser)
+
+router.route('/users/:id')
+.get(userController.getOneUser)
+// .put(userController.updateUser)
+
 
 router.post('/signup', signInUpController.signUp)
 router.post('/signin', signInUpController.signIn)
