@@ -130,7 +130,80 @@ describe('GET /makans', function () {
     })
   })
 })
-
+describe('GET /random', function () {
+  this.timeout(10000)
+  it('should return a 200 response', (done) => {
+    api.get('/random')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+  it('should get five eating place', (done) => {
+    api.get('/random')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      // console.log(response.body)
+      expect(error).to.be.a('null')
+      expect(response.body.length).to.equal(5)
+      done()
+    })
+  })
+})
+describe('GET /randomFive/based on a location', function () {
+  this.timeout(10000)
+  it('should return a 200 response', (done) => {
+    api.get('/randomFive/?lng=103.841445&lat=1.278971')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+  it('should get five eating place', (done) => {
+    api.get('/randomFive/?lng=103.841445&lat=1.278971')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      // console.log(response.body)
+      expect(error).to.be.a('null')
+      expect(response.body).to.be.a('array')
+      done()
+    })
+  })
+})
+describe('GET /random/:categories', function () {
+  this.timeout(10000)
+  it('should return a 200 response', (done) => {
+    api.get('/random/Chinese')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+  it('should get all Chinese food', (done) => {
+    api.get('/random/Chinese')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      // console.log(response.body)
+      expect(error).to.be.a('null')
+      // console.log(response.body.makan[0])
+      expect(response.body.makan[0].categories).to.equal('Chinese')
+      done()
+    })
+  })
+})
+describe('GET /price/:price', function () {
+  this.timeout(10000)
+  it('should return a 200 response', (done) => {
+    api.get('/price/5')
+    .set('Accept', 'application/json')
+    .expect(200, done)
+  })
+  it('should get all places that serve food 5 dollars', (done) => {
+    api.get('/price/5')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      // console.log(response.body)
+      expect(error).to.be.a('null')
+      console.log(response.body.makan[0].price)
+      expect(response.body.makan[0].price).to.equal(5)
+      done()
+    })
+  })
+})
 describe('GET /makans/:id', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
