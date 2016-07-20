@@ -84,6 +84,16 @@ function getRandom (req, res) {
     // console.log(foundMakan)
   })
 }
+function getPrice (req, res) {
+  const price = req.params.price
+  // console.log(categories)
+  Makan.find({price: price}, function (err, makan) {
+    if (err) return res.status(401).json({ error: 'undefined category' })
+    console.log(makan)
+    res.status(200).json({message: 'Makan found', makan})
+    // console.log(foundMakan)
+  })
+}
 function getFive (req, res) {
   // var geolocation = {
   //   latitude: req.body.lat,
@@ -154,6 +164,7 @@ module.exports = {
   updateMakan: updateMakan,
   deleteMakan: deleteMakan,
   getRandom: getRandom,
+  getPrice: getPrice,
   getFive: getFive,
   getFiveRandom: getFiveRandom
 }
