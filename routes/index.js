@@ -16,10 +16,13 @@ router.route('/makans')
 .get(makanController.getAllMakans)
 .post(userController.userLoggedIn, makanController.makeNewMakan)
 
-router.get('/random/:categories', makanController.getRandom)
-router.get('/price/:price', makanController.getPrice)
 router.get('/random', makanController.getFive)
+router.get('/type', makanController.getComplex)
 router.get('/randomFive', makanController.getFiveRandom)
+router.get('/random/:categories', makanController.getCategories)
+router.get('/place/:type', makanController.getPlace)
+
+router.get('/price/:price', makanController.getPrice)
 
 router.route('/makans/:id')
 .get(makanController.getOneMakan)
