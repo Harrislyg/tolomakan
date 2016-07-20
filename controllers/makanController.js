@@ -1,5 +1,5 @@
 const Makan = require('../models/makan')
-const User = require('../models/user')
+// const User = require('../models/user')
 // show all makans
 function getAllMakans (req, res) {
   Makan.find({}, function (err, makansArray) {
@@ -114,41 +114,57 @@ function getFive (req, res) {
       })
     }
   })
-
-  // var categories = ['Western', 'Chinese', 'Thai', 'Japanese', 'Korean']
-  // var foundMakan
-  // var foundMakan1
-  // // console.log(categories)
-  // var results = []
-  // for (var i = 0; i < categories.length; i++) {
-  //   Makan.find({categories: categories[i]}, function (err, makan) {
-  //     if (err) return res.status(401).json({ error: 'undefined category' })
-  //      foundMakan = makan[parseInt(Math.random() * makan.length)]
-  //
-  //      results.push(foundMakan)
-  //      if ( results.length === categories.length ) {
-  //        res.status(200).json({message: 'Makan found', results})
-  //      }
-  //     console.log(i)
-  // })
-  // }
-  // Makan.find({categories: categories[1]}, function (err, makan1) {
-  //     if (err) return res.status(401).json({ error: 'undefined category' })
-  //      foundMakan1 = makan[parseInt(Math.random() * makan1.length)]
-  //     // res.status(200).json({message: 'Makan found', foundMakan1})
-  //     // console.log(foundMakan)
-  //     // console.log(i)
-  // })
-  // res.status(200).json(foundMakan1)
 }
-
+// Get 5 random places by categories around the area
 function getFiveRandom (req, res) {
+  // defining the lat and long of the current user based on query method in express
   var geolocation = {
-    latitude: req.body.lat,
-    longitude: req.body.lng
+    latitude: req.query.lat,
+    longitude: req.query.lng
   }
+  // finding all places around the user within the 500 m radius
   var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
   res.status(200).json(list)
+  // making an empty array for user to push into
+  // var listArray = []
+  // list.forEach(function (makanPlace) {
+  //   listArray.push(makanPlace.categories)
+  // })
+  // // function to call only Unique categories
+  // function onlyUnique (value, index, self) {
+  //   return self.indexOf(value) === index
+  // }
+  // // Randomising the order of the categories
+  // function shuffle (array) {
+  //   var currentIndex = array.length
+  //   var temporaryValue
+  //   var randomIndex
+  //   while (currentIndex !== 0) {
+  //     randomIndex = Math.floor(Math.random() * currentIndex)
+  //     currentIndex -= 1
+  //     // And swap it with the current element.
+  //     temporaryValue = array[currentIndex]
+  //     array[currentIndex] = array[randomIndex]
+  //     array[randomIndex] = temporaryValue
+  //   }
+  //   return array
+  // }
+  // var uniqueMakanCat = listArray.filter(onlyUnique)
+  // var randomUnique = shuffle(uniqueMakanCat)
+  // var foundMakan
+  // var results = []
+  // for (var x in randomUnique) {
+  //   list.find({categories: randomUnique[x]}, function (err, makan) {
+  //     if (err) return res.status(401).json({ error: 'undefined category' })
+  //     foundMakan = makan[parseInt(Math.random() * makan.length)]
+  //     results.push(foundMakan)
+  //     console.log('This is results', results)
+  //     // results may not be 5
+  //     if (results.length === 5) {
+  //       res.status(200).json(results)
+  //     }
+  //   })
+  // }
 }
 
 module.exports = {
