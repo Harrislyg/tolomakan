@@ -144,11 +144,19 @@ function getFive (req, res) {
 
 function getFiveRandom (req, res) {
   var geolocation = {
-    latitude: req.body.lat,
-    longitude: req.body.lng
+    latitude: req.query.lat,
+    longitude: req.query.lng
   }
-  var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
-  res.status(200).json(list)
+  console.log(req.query)
+
+  Makan.where('loc')
+  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  .exec(function (err, result) {
+    console.log('result:',result)
+    res.status(200).json(result)
+
+  })
+
 }
 
 module.exports = {
