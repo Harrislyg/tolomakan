@@ -22,8 +22,8 @@ describe('POST /signup', function () {
     api.post('/signup')
     .set('Accept', 'application/json')
     .send({
-      'name': 'Ariel',
-      'email': 'shihqian@gmail.com',
+      'name': 'Justin',
+      'email': 'jus@gmail.com',
       'password': '123456'
     }).end((error, response) => {
       expect(error).to.be.a('null')
@@ -76,7 +76,32 @@ describe('POST /signin', function () {
     .expect(401, done)
   })
 })
-
+describe('DELETE /deleteUser', function () {
+  var auth_token
+  this.timeout(10000)
+  before((done) => {
+    api.post('/signin')
+    .set('Accept', 'application/json')
+    .send({
+      'email': 'jus@gmail.com',
+      'password': '123456'
+    }).end(function (error, response) {
+      if (error) return response.status(401).json({ error: 'authentication not found' })
+      auth_token = response.body.auth_token
+      done()
+    })
+  })
+  it('should remove a user', (done) => {
+    api.delete('/users')
+    .set('Accept', 'application/html')
+    .set('Auth-Token', auth_token)
+    .end((err, response) => {
+      if (err) response.status(401).json({error: 'delete user test fails'})
+      expect(response.body.message).to.equal('User is deleted')
+      done()
+    })
+  })
+})
 describe('GET /makans', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
@@ -265,7 +290,7 @@ describe('PUT /makans/:id', function () {
 describe('DELETE /makans/:id', function () {
   var auth_token
   var id
-  var email = 'jus@email.com'
+  var email = 'shihqian@gmail.com'
   this.timeout(10000)
   before((done) => {
     api.post('/signin')
