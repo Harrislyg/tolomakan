@@ -21,6 +21,7 @@ var data = [
     'documents': [
       {
         'name': 'Xi Xiang Feng Yong Tau Fu',
+        'loc': [103.846598, 1.372184],
         'latitude': 1.372184,
         'longitude': 103.846598,
         'address': '#01-23, Ang Mo Kio Food Centre, 724 Ang Mo Kio Avenue 6, 560724',
@@ -31,6 +32,7 @@ var data = [
       },
       {
         'name': 'Takagi Ramen',
+        'loc': [103.847911, 1.372622],
         'latitude': 1.372622,
         'longitude': 103.847911,
         'address': '721 Ang Mo Kio Ave 8, 560721',
@@ -41,6 +43,7 @@ var data = [
       },
       {
         'name': 'Fish & Co',
+        'loc': [103.848535, 1.369404],
         'latitude': 1.369404,
         'longitude': 103.848535,
         'address': '53 Ang Mo Kio Avenue 3 #02-03, 569933',
@@ -51,6 +54,7 @@ var data = [
       },
       {
         'name': 'Broadway Claypot Rice',
+        'loc': [103.845735, 1.372757],
         'latitude': 1.372757,
         'longitude': 103.845735,
         'address': '728 Ang Mo Kio Ave 6, #01-4200, 560728',
@@ -61,6 +65,7 @@ var data = [
       },
       {
         'name': 'New Lucky Claypot Rice',
+        'loc': [1.3081851, 1.372757],
         'latitude': 1.372757,
         'longitude': 1.3081851,
         'address': '44 Holland Dr, 270044',
@@ -71,6 +76,7 @@ var data = [
       },
       {
         'name': 'Nakhon Kitchen (Holland Village)',
+        'loc': [103.794872, 1.310318],
         'latitude': 1.310318,
         'longitude': 103.794872,
         'address': '27 Lorong Liput, 277738',
@@ -81,6 +87,7 @@ var data = [
       },
       {
         'name': 'Hua Soon Western Food',
+        'loc': [103.795231, 1.310318],
         'latitude': 1.310318,
         'longitude': 103.795231,
         'address': '30 Lorong Mambong, 277688',
@@ -91,6 +98,7 @@ var data = [
       },
       {
         'name': 'Master Crab Seafood Restaurant',
+        'loc': [103.7882624, 1.31151],
         'latitude': 1.31151,
         'longitude': 103.7882624,
         'address': '19 Ghim Moh Rd Block 19, 270019',
@@ -101,6 +109,7 @@ var data = [
       },
       {
         'name': 'Flock Cafe',
+        'loc': [103.7886997, 1.3103805],
         'latitude': 1.3103805,
         'longitude': 103.7886997,
         'address': '21 Ghim Moh Rd, 270021',
@@ -111,6 +120,7 @@ var data = [
       },
       {
         'name': 'The Daily Roundup',
+        'loc': [103.8414418, 1.2789591],
         'latitude': 1.2789591,
         'longitude': 103.8414418,
         'address': '1 Keong Saik Rd ,089109',
@@ -121,6 +131,7 @@ var data = [
       },
       {
         'name': 'The Salad Corner',
+        'loc': [103.843119, 1.2770121],
         'latitude': 1.2770121,
         'longitude': 103.843119,
         'address': '7 Tanjong Pagar Plaza, 081006',
@@ -131,6 +142,7 @@ var data = [
       },
       {
         'name': 'Chicken Up',
+        'loc': [103.8438331, 1.2792825],
         'latitude': 1.2792825,
         'longitude': 103.8438331,
         'address': '48 Tanjong Pagar Rd, 088469',
@@ -141,6 +153,7 @@ var data = [
       },
       {
         'name': 'Churn Creamery',
+        'loc': [103.8434633, 1.2776249],
         'latitude': 1.2776249,
         'longitude': 103.8434633,
         'address': '124 Tanjong Pagar Rd, 088533',
@@ -151,6 +164,7 @@ var data = [
       },
       {
         'name': 'Ramen Keisuke Tonkotsu King',
+        'loc': [103.843891, 1.276993],
         'latitude': 1.276993,
         'longitude': 103.843891,
         'address': '1 Tras Link, 078867',
@@ -161,6 +175,7 @@ var data = [
       },
       {
         'name': 'Foong Kee Coffee Shop',
+        'loc': [103.841602, 1.2794509],
         'latitude': 1.2794509,
         'longitude': 103.841602,
         'address': '6 Keong Saik Rd ,089114',
@@ -171,6 +186,7 @@ var data = [
       },
       {
         'name': 'Carpenter and Cook',
+        'loc': [103.773741, 1.341761],
         'latitude': 1.341761,
         'longitude': 103.773741,
         'address': '19 Lorong Kilat, 598120',
@@ -181,6 +197,7 @@ var data = [
       },
       {
         'name': 'Kok Sen Restaurant',
+        'loc': [103.8417121, 1.2802561],
         'latitude': 1.2802561,
         'longitude': 103.8417121,
         'address': '30-32 Keong Saik Road, 089137',
@@ -191,6 +208,7 @@ var data = [
       },
       {
         'name': 'Riders Cafe',
+        'loc': [103.797242, 1.343066],
         'latitude': 1.343066,
         'longitude': 103.797242,
         'address': '51 Fairways Drive, 286965 ',
@@ -201,6 +219,7 @@ var data = [
       },
       {
         'name': 'Kilo At Pact',
+        'loc': [103.840329, 1.300499],
         'latitude': 1.300499,
         'longitude': 103.840329,
         'address': '#02-16/17/18/19, Orchard Central, 181 Orchard Road, 238879',
@@ -211,6 +230,7 @@ var data = [
       },
       {
         'name': 'Common Man Coffee Roasters',
+        'loc': [103.838409, 1.291825],
         'latitude': 1.291825,
         'longitude': 103.838409,
         'address': '#01-00, 22 Martin Road, 239058',
@@ -221,6 +241,7 @@ var data = [
       },
       {
         'name': ' 49 Seats (Kreta Ayer)',
+        'loc': [103.842125, 1.281098],
         'latitude': 1.281098,
         'longitude': 103.842125,
         'address': '49 Kreta Ayer Road, 089007',
@@ -231,6 +252,7 @@ var data = [
       },
       {
         'name': 'Peach Blossoms',
+        'loc': [103.857422, 1.290989],
         'latitude': 1.290989,
         'longitude': 103.857422,
         'address': '#05-00, Marina Mandarin, 6 Raffles Boulevard, 039594',
@@ -241,6 +263,7 @@ var data = [
       },
       {
         'name': 'Alkaff Mansion Ristorante',
+        'loc': [103.813194, 1.278821],
         'latitude': 1.278821,
         'longitude': 103.813194,
         'address': '10 Telok Blangah Green, 109178',
@@ -251,6 +274,7 @@ var data = [
       },
       {
         'name': 'Strangers Reunion',
+        'loc': [103.836435, 1.276918],
         'latitude': 1.276918,
         'longitude': 103.836435,
         'address': '35 Kampong Bahru Rd, 169356',
@@ -261,6 +285,7 @@ var data = [
       },
       {
         'name': 'Symmetry',
+        'loc': [103.859248, 1.303802],
         'latitude': 1.303802,
         'longitude': 103.859248,
         'address': '9 Jln Kubor, 199206',
@@ -271,6 +296,7 @@ var data = [
       },
       {
         'name': 'Sunday Folks',
+        'loc': [103.796814, 1.311694],
         'latitude': 1.311694,
         'longitude': 103.796814,
         'address': '44 Jalan Merah Saga, #01-52 Chip Bee Gardens, 278116',
@@ -281,6 +307,7 @@ var data = [
       },
       {
         'name': 'Salted Caramel',
+        'loc': [103.83437, 1.353742],
         'latitude': 1.353742,
         'longitude': 103.83437,
         'address': '246 Upper Thomson Rd, 574370',
@@ -291,6 +318,7 @@ var data = [
       },
       {
         'name': 'Mad About Sucre',
+        'loc': [103.840834, 1.279797],
         'latitude': 1.279797,
         'longitude': 103.840834,
         'address': '27 Teo Hong Rd, 088334',
@@ -301,6 +329,7 @@ var data = [
       },
       {
         'name': 'Hyde & Co.',
+        'loc': [103.860016, 1.303832],
         'latitude': 1.303832,
         'longitude': 103.860016,
         'address': '785 North Bridge Rd, 198753',
@@ -311,6 +340,7 @@ var data = [
       },
       {
         'name': 'Artistry',
+        'loc': [103.858272, 1.302908],
         'latitude': 1.302908,
         'longitude': 103.858272,
         'address': '17 Jalan Pinang, 199149',
@@ -321,6 +351,7 @@ var data = [
       },
       {
         'name': 'I Am',
+        'loc': [103.858413, 1.301757],
         'latitude': 1.301757,
         'longitude': 103.858413,
         'address': '674 North Bridge Road, 199486',
@@ -331,6 +362,7 @@ var data = [
       },
       {
         'name': 'Masizzim Singapore',
+        'loc': [103.838561, 1.301259],
         'latitude': 1.301259,
         'longitude': 103.838561,
         'address': '313 Orchard Road, 238895',
@@ -341,6 +373,7 @@ var data = [
       },
       {
         'name': 'Ah Bong Italian',
+        'loc': [103.834237, 1.283818],
         'latitude': 1.283818,
         'longitude': 103.834237,
         'address': '56 Eng Hoon Street, 160056',
@@ -351,6 +384,7 @@ var data = [
       },
       {
         'name': 'Choupinette',
+        'loc': [103.809611, 1.324341],
         'latitude': 1.324341,
         'longitude': 103.809611,
         'address': '607 Bukit Timah Rd, 269708',
@@ -361,6 +395,7 @@ var data = [
       },
       {
         'name': 'The Fabulous Baker Boy',
+        'loc': [103.846024, 1.291792],
         'latitude': 1.291792,
         'longitude': 103.846024,
         'address': '70 River Valley Rd, 179037',
@@ -371,6 +406,7 @@ var data = [
       },
       {
         'name': 'The Cold Pantry',
+        'loc': [103.853398, 1.31546],
         'latitude': 1.31546,
         'longitude': 103.853398,
         'address': '131 Rangoon Rd, 218409',
@@ -381,6 +417,7 @@ var data = [
       },
       {
         'name': 'Nunsaram Korean Dessert Cafe',
+        'loc': [103.840034, 1.300609],
         'latitude': 1.300609,
         'longitude': 103.840034,
         'address': '181 Orchard Rd, 238896',
@@ -391,6 +428,7 @@ var data = [
       },
       {
         'name': 'The LoKal',
+        'loc': [103.840872, 1.278399],
         'latitude': 1.278399,
         'longitude': 103.840872,
         'address': '136 Neil Rd, 088865',
@@ -398,7 +436,305 @@ var data = [
         'categories': 'Aussie',
         'mapId': 'ChIJ7zUyvG0Z2jERINlzoYjfjCc',
         'price': 25
-      }
+      },
+      {
+        'name': 'Oma Spoon',
+        'loc': [103.838561, 1.301259],
+        'latitude': 1.301259,
+        'longitude': 103.838561,
+        'address': '#04-20/32, 313@Somerset, 313 Orchard Rd, 238895',
+        'type': 'Cafe',
+        'categories': 'Korean',
+        'mapId': 'ChIJp00lJpEZ2jERhCa3U4A_0KM',
+        'price': 10
+
+      },
+      {
+        'name': 'A Noodle Story',
+        'loc': [103.846674, 1.279431],
+        'latitude': 1.279431,
+        'longitude': 103.846674,
+        'address': '#01-39 069891, 7 Maxwell Rd, 069111',
+        'type': 'Hawker',
+        'categories': 'Chinese',
+        'mapId': 'ChIJ642LmRIZ2jERpAlKinakrcE',
+        'price': 5
+      },
+      {
+        'name': 'The Wicked Garlic',
+        'loc': [103.846362, 1.276167],
+        'latitude': 1.276167,
+        'longitude': 103.846362,
+        'address': '10 Anson Road, #01-37, International Plaza, 079903',
+        'type': 'Cafe',
+        'categories': 'Italian',
+        'mapId': 'ChIJdSRrWxMZ2jERg4X5jq33AB0',
+        'price': 15
+      },
+      {
+        'name': 'Ginza Tendon Itsuki',
+        'loc': [103.843754, 1.277318],
+        'latitude':  1.277318,
+        'longitude': 103.843754,
+        'address': '101 Tanjong Pagar Rd, 088522',
+        'type': 'Restaurant',
+        'categories': 'Japanese',
+        'mapId': 'ChIJMaG_2GwZ2jERtl0csWETlDc',
+        'price': 20
+      },
+      {
+        'name': 'Brothers Ramen',
+        'loc': [103.846269, 1.275934],
+        'latitude': 1.275934,
+        'longitude': 103.846269,
+        'address': 'International Plaza #01-20, 10 Anson Road, 079903',
+        'type': 'Coffeeshop',
+        'categories': 'Japanese',
+        'mapId': 'ChIJdSRrWxMZ2jERg4X5jq33AB0',
+        'price': 15
+      },
+      {
+        'name': 'Sing HK Cafe',
+        'loc': [103.84009, 1.276955],
+        'latitude': 1.276955,
+        'longitude': 103.84009,
+        'address': 'Block #01-42, 4 Everton Park, Block 4, 080004',
+        'type': 'Cafe',
+        'categories': 'Chinese',
+        'mapId': 'ChIJNWrLMGwZ2jERfgBvkpmMkQM',
+        'price': 5
+      },
+      {
+        'name': 'Munch SaladSmith',
+        'loc': [103.848881, 1.279253],
+        'latitude': 1.279253,
+        'longitude': 103.848881,
+        'address': '112 Robinson Rd, Robinson 112, #01-01, 068902',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJT3BedBIZ2jERqElrS0B47qA',
+        'price': 15
+      },
+      {
+        'name': 'Imperial Treasure Noodle & Congee House',
+        'loc': [103.843549, 1.274929],
+        'latitude': 1.274929,
+        'longitude': 103.843549,
+        'address': '100 Tras Street, 079027	',
+        'type': 'Restaurant',
+        'categories': 'Chinese',
+        'mapId': 'ChIJIZCqX2sZ2jERYvpfRzrbnvE',
+        'price': 20
+      },
+      {
+        'name': '2D1N Soju Bang',
+        'loc': [103.843819, 1.279351],
+        'latitude': 1.279351,
+        'longitude': 103.843819,
+        'address': '44/46 Tanjong Pagar Rd, 088465',
+        'type': 'Restaurant',
+        'categories': 'Korean',
+        'mapId': 'ChIJIZUqXG0Z2jER29HucKz3ABM',
+        'price': 25
+      },
+      {
+        'name': 'Xiu Ji Ikan Bilis Yong Tau Fu',
+        'loc': [103.843098, 1.282573],
+        'latitude': 1.282573,
+        'longitude': 103.843098,
+        'address': 'Smith St, Chinatown Silk House, 050335',
+        'type': 'Hawker',
+        'categories': 'Chinese',
+        'mapId': 'ChIJAenlH3MZ2jER7D351vE8fgo',
+        'price': 5
+      },
+      {
+        'name': 'Afterglow',
+        'loc': [103.84167, 1.280102],
+        'latitude': 1.280102,
+        'longitude': 103.84167,
+        'address': '24 Keong Saik Rd, 089131',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJBVdQfHIZ2jERkv_5-eIKycQ',
+        'price': 25
+      },
+      {
+        'name': 'Potato Head Folk',
+        'loc': [103.8417, 1.280639],
+        'latitude': 1.280639,
+        'longitude': 103.8417,
+        'address': '36 Keong Saik Rd, 089143',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJ908dY3IZ2jERtc-dqh3jOEM',
+        'price': 20
+      },
+      {
+        'name': 'The Populus Coffee & Food Co.',
+        'loc': [103.84075, 1.278195],
+        'latitude': 1.278195,
+        'longitude': 103.84075,
+        'address': '146 Neil Rd, 088875',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJIQ0quW0Z2jERoyEo9Sbz8pY',
+        'price': 25
+      },
+      {
+        'name': 'Drury Lane',
+        'loc': [103.843762, 1.278283],
+        'latitude': 1.278283,
+        'longitude': 103.843762,
+        'address': '94 Tg Pagar Rd, 088515',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJHS-tOG0Z2jERKEayWY8eq5k',
+        'price': 15
+      },
+      {
+        'name': 'Tong Ah Eating House',
+        'loc': [103.84144, 1.280103],
+        'latitude': 1.280103,
+        'longitude': 103.84144,
+        'address': '35 Keong Saik Rd, 089142',
+        'type': 'Coffeeshop',
+        'categories': 'Chinese',
+        'mapId': 'ChIJzTtVenIZ2jER_1V4DZQU_t0',
+        'price': 5
+      },
+      {
+        'name': 'Twins',
+        'loc': [103.843009, 1.277508],
+        'latitude': 1.277508,
+        'longitude': 103.843009,
+        'address': '7 Craig Rd, 089667',
+        'type': 'Restaurant',
+        'categories': 'Korean',
+        'mapId': 'ChIJS9ty52wZ2jERxXHAxofkpZg',
+        'price': 25
+      },
+      {
+        'name': 'Xiao Ya Tou',
+        'loc': [103.842912, 1.279229],
+        'latitude': 1.279229,
+        'longitude': 103.842912,
+        'address': '6 Duxton Hill, 089592',
+        'type': 'Cafe',
+        'categories': 'Chinese',
+        'mapId': 'ChIJVcNIZG0Z2jERTOtBSXG_R14',
+        'price': 50
+      },
+      {
+        'name': 'Taratata Bistrot',
+        'loc': [103.841451, 1.280183],
+        'latitude': 1.280183 ,
+        'longitude': 103.841451,
+        'address': '35A Keong Saik Road, 089142',
+        'type': 'Restaurant',
+        'categories': 'French',
+        'mapId': 'ChIJzTtVenIZ2jER_1V4DZQU_t0',
+        'price': 25
+      },
+      {
+        'name': 'Todamgol Korean',
+        'loc': [103.844003, 1.27924],
+        'latitude': 1.27924,
+        'longitude': 103.844003,
+        'address': '31 Tanjong Pagar Rd, 088454',
+        'type': 'Restaurant',
+        'categories': 'Korean',
+        'mapId': 'ChIJ04qkUG0Z2jER2KkBpRfUVo0',
+        'price': 25
+      },
+      {
+        'name': 'Pince & Pints',
+        'loc': [103.843432, 1.279097],
+        'latitude': 1.279097,
+        'longitude': 103.843432,
+        'address': '32-33 Duxton Rd, 089496',
+        'type': 'Cafe',
+        'categories': 'Dessert',
+        'mapId': 'ChIJp-DcQm0Z2jERTYIW2In-ECQ',
+        'price': 10
+      },
+      {
+        'name': 'Ninja Bowl',
+        'loc': [103.843359, 1.27975],
+        'latitude': 1.27975,
+        'longitude': 103.843359,
+        'address': '15 Duxton Rd, 089481',
+        'type': 'Restaurant',
+        'categories': 'Japanese',
+        'mapId': 'ChIJuaJzoHIZ2jEReYDppeFlH5Q',
+        'price': 20
+      },
+      {
+        'name': '999.99 Five Nines',
+        'loc': [103.841516, 1.27998],
+        'latitude': 1.27998,
+        'longitude': 103.841516,
+        'address': '29 Keong Saik Rd, 089136',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJ1egrenIZ2jER70AVskQVg9U',
+        'price': 30
+      },
+      {
+        'name': 'Lolla',
+        'loc': [103.845703, 1.281046],
+        'latitude': 1.281046,
+        'longitude': 103.845703,
+        'address': '22 Ann Siang Rd, 069702',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJb-g4OA0Z2jER5ywLUTLl_4Y',
+        'price': 10
+      },
+      {
+        'name': 'Park Bench Deli',
+        'loc': [103.847277, 1.279872],
+        'latitude': 1.279872,
+        'longitude': 103.847277,
+        'address': '179 Telok Ayer St, 068627',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJVejXfQ0Z2jER2GBCXob58d0',
+        'price': 15
+      },
+      {
+        'name': 'Gaest',
+        'loc': [103.847336, 1.2796],
+        'latitude': 1.2796,
+        'longitude': 103.847336,
+        'address': '21 McCallum St, 069047',
+        'type': 'Cafe',
+        'categories': 'Italian',
+        'mapId': 'ChIJs1OCgxIZ2jER5eWkuKZL02E',
+        'price': 15
+      },
+      {
+        'name': 'The Disgruntled Chef',
+        'loc': [103.84584, 1.280869],
+        'latitude':  1.280869,
+        'longitude': 103.84584,
+        'address': '28 Ann Siang Rd, 069708',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJGaY_Rw0Z2jER8_oqyyiHrLk',
+        'price': 20
+      },
+      {
+        'name': 'Wanton Seng Noodle Bar',
+        'loc': [103.846812, 1.280175],
+        'latitude': 1.280175,
+        'longitude': 103.846812,
+        'address': '52 Amoy Street, 069878',
+        'type': 'Cafe',
+        'categories': 'Chinese',
+        'mapId': 'ChIJE3H-ZA0Z2jERpxvI4x1fY_Q',
+        'price': 20
+      },
     ]
   }
 ]

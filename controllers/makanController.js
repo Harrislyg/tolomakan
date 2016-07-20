@@ -1,5 +1,5 @@
 const Makan = require('../models/makan')
-const User = require('../models/user')
+// const User = require('../models/user')
 // show all makans
 function getAllMakans (req, res) {
   Makan.find({}, function (err, makansArray) {
@@ -63,6 +63,13 @@ function getRandom (req, res) {
   })
 }
 function getFive (req, res) {
+  // var geolocation = {
+  //   latitude: req.body.lat,
+  //   longitude: req.body.lng
+  // }
+  // var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  // res.status(200).json(list)
+
   Makan.find({}, function (err, makan) {
     if (err) return res.status(401).json({ error: 'cannot get Five' })
     var makanArray = []
@@ -107,32 +114,22 @@ function getFive (req, res) {
       })
     }
   })
+}
+// Get 5 random places by categories around the area
+function getFiveRandom (req, res) {
+  var geolocation = {
+    latitude: req.query.lat,
+    longitude: req.query.lng
+  }
+  console.log(req.query)
 
-  // var categories = ['Western', 'Chinese', 'Thai', 'Japanese', 'Korean']
-  // var foundMakan
-  // var foundMakan1
-  // // console.log(categories)
-  // var results = []
-  // for (var i = 0; i < categories.length; i++) {
-  //   Makan.find({categories: categories[i]}, function (err, makan) {
-  //     if (err) return res.status(401).json({ error: 'undefined category' })
-  //      foundMakan = makan[parseInt(Math.random() * makan.length)]
-  //
-  //      results.push(foundMakan)
-  //      if ( results.length === categories.length ) {
-  //        res.status(200).json({message: 'Makan found', results})
-  //      }
-  //     console.log(i)
-  // })
-  // }
-  // Makan.find({categories: categories[1]}, function (err, makan1) {
-  //     if (err) return res.status(401).json({ error: 'undefined category' })
-  //      foundMakan1 = makan[parseInt(Math.random() * makan1.length)]
-  //     // res.status(200).json({message: 'Makan found', foundMakan1})
-  //     // console.log(foundMakan)
-  //     // console.log(i)
-  // })
-  // res.status(200).json(foundMakan1)
+  Makan.where('loc')
+  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  .exec(function (err, result) {
+    if (err) return res.status(401).json({ error: 'undefined category' })
+    console.log('result:', result)
+    res.status(200).json(result)
+  })
 }
 
 module.exports = {
@@ -142,5 +139,6 @@ module.exports = {
   updateMakan: updateMakan,
   deleteMakan: deleteMakan,
   getRandom: getRandom,
-  getFive: getFive
+  getFive: getFive,
+  getFiveRandom: getFiveRandom
 }
