@@ -117,14 +117,19 @@ function getFive (req, res) {
 }
 // Get 5 random places by categories around the area
 function getFiveRandom (req, res) {
-  // defining the lat and long of the current user based on query method in express
   var geolocation = {
     latitude: req.query.lat,
     longitude: req.query.lng
   }
-  // finding all places around the user within the 500 m radius
-  var list = Makan.where('loc').near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
-  res.status(200).json(list)
+  console.log(req.query)
+
+  Makan.where('loc')
+  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 5})
+  .exec(function (err, result) {
+    if (err) return res.status(401).json({ error: 'undefined category' })
+    console.log('result:', result)
+    res.status(200).json(result)
+  })
   // making an empty array for user to push into
   // var listArray = []
   // list.forEach(function (makanPlace) {
