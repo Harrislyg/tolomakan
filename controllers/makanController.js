@@ -130,46 +130,6 @@ function getFiveRandom (req, res) {
     console.log('result:', result)
     res.status(200).json(result)
   })
-  // making an empty array for user to push into
-  // var listArray = []
-  // list.forEach(function (makanPlace) {
-  //   listArray.push(makanPlace.categories)
-  // })
-  // // function to call only Unique categories
-  // function onlyUnique (value, index, self) {
-  //   return self.indexOf(value) === index
-  // }
-  // // Randomising the order of the categories
-  // function shuffle (array) {
-  //   var currentIndex = array.length
-  //   var temporaryValue
-  //   var randomIndex
-  //   while (currentIndex !== 0) {
-  //     randomIndex = Math.floor(Math.random() * currentIndex)
-  //     currentIndex -= 1
-  //     // And swap it with the current element.
-  //     temporaryValue = array[currentIndex]
-  //     array[currentIndex] = array[randomIndex]
-  //     array[randomIndex] = temporaryValue
-  //   }
-  //   return array
-  // }
-  // var uniqueMakanCat = listArray.filter(onlyUnique)
-  // var randomUnique = shuffle(uniqueMakanCat)
-  // var foundMakan
-  // var results = []
-  // for (var x in randomUnique) {
-  //   list.find({categories: randomUnique[x]}, function (err, makan) {
-  //     if (err) return res.status(401).json({ error: 'undefined category' })
-  //     foundMakan = makan[parseInt(Math.random() * makan.length)]
-  //     results.push(foundMakan)
-  //     console.log('This is results', results)
-  //     // results may not be 5
-  //     if (results.length === 5) {
-  //       res.status(200).json(results)
-  //     }
-  //   })
-  // }
 }
 
 module.exports = {
