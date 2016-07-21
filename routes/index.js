@@ -44,5 +44,4 @@ router.get('/history', userController.userLoggedIn, userController.getHistory)
 router.post('/signup', signInUpController.signUp)
 router.post('/signin', signInUpController.signIn)
 
-
 module.exports = router
