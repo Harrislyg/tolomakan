@@ -50,12 +50,12 @@ function deleteUser (req, res, next) {
 }
 
 function postHistory (req, res, next) {
-  const name = req.params.name
+  const id = req.params.id
   // User.findById(req.currentUser.id, function (err, user) {
   //   if (err) return res.status(404).json({error: '/user getOneUser error 1'})
   //   res.status(200).json(user)
   // })
-  Makan.find({name: name}, function (err, makan) {
+  Makan.find({_id: id}, function (err, makan) {
     if (err || !makan) return res.status(401).json({error: 'Makan invalid'})
     console.log(req.currentUser)
     req.currentUser._makans.push(makan[0])
