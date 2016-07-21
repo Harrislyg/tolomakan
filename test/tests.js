@@ -255,7 +255,7 @@ describe('PUT /makans/:id', function () {
     })
   })
   it('should return a 200 response', (done) => {
-    api.put('/makans/578e03e10d57c98311936738')
+    api.put('/makans/57904385d976bdccd2df6815')
     .set('Accept', 'application/json')
     .set('User-Email', email)
     .set('Auth-Token', auth_token)
@@ -276,7 +276,7 @@ describe('PUT /makans/:id', function () {
     .expect(200, done)
   })
   it('should update a makan place', (done) => {
-    api.get('/makans/578e03e10d57c98311936738')
+    api.get('/makans/57904385d976bdccd2df6815')
     .set('Accept', 'application/json')
     .end((error, response) => {
       // console.log(response.body)
