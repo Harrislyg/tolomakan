@@ -19,6 +19,7 @@ router.route('/makans')
 router.get('/random', makanController.getFive)
 router.get('/type', makanController.getComplex)
 router.get('/randomFive', makanController.getFiveRandom)
+router.get('/near', makanController.getFiveByPrice)
 router.get('/random/:categories', makanController.getCategories)
 router.get('/place/:type', makanController.getPlace)
 
@@ -36,7 +37,6 @@ router.route('/users')
 router.route('/users/:id')
 .get(userController.getOneUser)
 // .put(userController.updateUser)
-
 
 router.post('/signup', signInUpController.signUp)
 router.post('/signin', signInUpController.signIn)
