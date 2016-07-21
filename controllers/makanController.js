@@ -153,7 +153,7 @@ function getFiveByPrice (req, res) {
     latitude: req.query.lat,
     longitude: req.query.lng
   }
-  var price = parseInt(req.query.price, 5)
+  var price = parseInt(req.query.price)
   // console.log(req.query)
 
   Makan.where('loc')
@@ -169,6 +169,7 @@ function getFiveByPrice (req, res) {
         results.push(result[i])
       }
     }
+    console.log(results)
     res.status(200).json(results)
   })
 }
@@ -196,7 +197,7 @@ function getFiveRandom (req, res) {
       var singleCat = result.filter(function (makanObject) {
         return makanObject.categories === randomUniqueMakansCat[x]
       })
-      results.push(singleCat[parseInt(Math.random() * singleCat.length, 10)])
+      results.push(singleCat[parseInt(Math.random() * singleCat.length)])
     }
     res.status(200).json(results)
   })
