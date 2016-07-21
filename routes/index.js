@@ -38,7 +38,7 @@ router.route('/users/:id')
 .get(userController.getOneUser)
 
 // .put(userController.updateUser)
-router.post('/history/:name', userController.userLoggedIn, userController.postHistory)
+router.post('/history/:id', userController.userLoggedIn, userController.postHistory)
 router.get('/history', userController.userLoggedIn, userController.getHistory)
 
 router.post('/signup', signInUpController.signUp)
