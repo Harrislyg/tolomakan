@@ -474,7 +474,7 @@ var data = [
       {
         'name': 'Ginza Tendon Itsuki',
         'loc': [103.843754, 1.277318],
-        'latitude':  1.277318,
+        'latitude': 1.277318,
         'longitude': 103.843754,
         'address': '101 Tanjong Pagar Rd, 088522',
         'type': 'Restaurant',
@@ -628,7 +628,7 @@ var data = [
       {
         'name': 'Taratata Bistrot',
         'loc': [103.841451, 1.280183],
-        'latitude': 1.280183 ,
+        'latitude': 1.280183,
         'longitude': 103.841451,
         'address': '35A Keong Saik Road, 089142',
         'type': 'Restaurant',
@@ -716,7 +716,7 @@ var data = [
       {
         'name': 'The Disgruntled Chef',
         'loc': [103.84584, 1.280869],
-        'latitude':  1.280869,
+        'latitude': 1.280869,
         'longitude': 103.84584,
         'address': '28 Ann Siang Rd, 069708',
         'type': 'Restaurant',
