@@ -57,7 +57,13 @@ function postHistory (req, res, next) {
   // })
   Makan.find({_id: id}, function (err, makan) {
     if (err || !makan) return res.status(401).json({error: 'Makan invalid'})
-    console.log(req.currentUser)
+    for (var i in req.currentUser._makans) {
+      console.log('userMakans', req.currentUser)
+      console.log(makan[0].name)
+      if (req.currentUser._makans[i].name === makan[0].name) {
+        return res.status(401).json({error: 'Makan alreadyexist'})
+      }
+    }
     req.currentUser._makans.push(makan[0])
     console.log(makan[0])
     req.currentUser.save((err) => {
