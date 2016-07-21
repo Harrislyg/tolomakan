@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const Makan = require('../models/makan')
 
 function userLoggedIn (req, res, next) {
   const userEmail = req.get('User-Email')
@@ -48,10 +49,35 @@ function deleteUser (req, res, next) {
   })
 }
 
+function postHistory (req, res, next) {
+  const name = req.params.name
+  // User.findById(req.currentUser.id, function (err, user) {
+  //   if (err) return res.status(404).json({error: '/user getOneUser error 1'})
+  //   res.status(200).json(user)
+  // })
+  Makan.find({name: name}, function (err, makan) {
+    if (err || !makan) return res.status(401).json({error: 'Makan invalid'})
+    console.log(req.currentUser)
+    req.currentUser._makans.push(makan[0])
+    console.log(makan[0])
+    req.currentUser.save((err) => {
+      if (err) return res.status(401).json({error: err})
+      res.status(201).json({user: req.currentUser})
+    })
+  })
+}
+
+function getHistory (req, res,next) {
+  res.status(201).json({history: req.currentUser._makans})
+}
+
 module.exports = {
   userLoggedIn: userLoggedIn,
   getAllUsers: getAllUsers,
   getOneUser: getOneUser,
   deleteUser: deleteUser,
-  editUser: editUser
+  editUser: editUser,
+  postHistory: postHistory,
+  getHistory: getHistory
+
 }
