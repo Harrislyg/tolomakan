@@ -138,7 +138,7 @@ function getFive (req, res) {
     for (var x in randomUnique) {
       Makan.find({categories: randomUnique[x]}, function (err, makan) {
         if (err) return res.status(401).json({ error: 'undefined category' })
-        foundMakan = makan[parseInt(Math.random() * makan.length)]
+        foundMakan = makan[parseInt(Math.random() * makan.length, 10)]
         results.push(foundMakan)
         // console.log('This is results', results)
         if (results.length === 5) {
@@ -146,6 +146,30 @@ function getFive (req, res) {
         }
       })
     }
+  })
+}
+function getFiveByPrice (req, res) {
+  var geolocation = {
+    latitude: req.query.lat,
+    longitude: req.query.lng
+  }
+  var price = parseInt(req.query.price, 5)
+  // console.log(req.query)
+
+  Makan.where('loc')
+  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 10 / 6371})
+  .exec(function (err, result) {
+    if (err) return res.status(401).json({ error: 'undefined category' })
+    // console.log('result:', result)
+    // console.log(result)
+    var results = []
+    // console.log(result.length)
+    for (var i = 0; i < result.length; i++) {
+      if (result[i].price === price) {
+        results.push(result[i])
+      }
+    }
+    res.status(200).json(results)
   })
 }
 
@@ -157,7 +181,7 @@ function getFiveRandom (req, res) {
   // console.log(req.query)
 
   Makan.where('loc')
-  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 10/6371})
+  .near({center: [geolocation.longitude, geolocation.latitude], maxDistance: 10 / 6371})
   .exec(function (err, result) {
     if (err) return res.status(401).json({ error: 'undefined category' })
     console.log('result:', result)
@@ -167,13 +191,12 @@ function getFiveRandom (req, res) {
     })
     var uniqueMakansCat = makansArray.filter(onlyUnique)
     var randomUniqueMakansCat = shuffle(uniqueMakansCat)
-    var foundMakans
     var results = []
     for (var x in randomUniqueMakansCat) {
       var singleCat = result.filter(function (makanObject) {
         return makanObject.categories === randomUniqueMakansCat[x]
       })
-      results.push(singleCat[parseInt(Math.random() * singleCat.length)])
+      results.push(singleCat[parseInt(Math.random() * singleCat.length, 10)])
     }
     res.status(200).json(results)
   })
@@ -189,6 +212,7 @@ module.exports = {
   getComplex: getComplex,
   getPlace: getPlace,
   getPrice: getPrice,
+  getFiveByPrice: getFiveByPrice,
   getFive: getFive,
   getFiveRandom: getFiveRandom
 }
