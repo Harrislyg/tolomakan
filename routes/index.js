@@ -36,9 +36,13 @@ router.route('/users')
 
 router.route('/users/:id')
 .get(userController.getOneUser)
+
 // .put(userController.updateUser)
+router.post('/history/:name', userController.userLoggedIn, userController.postHistory)
+router.get('/history', userController.userLoggedIn, userController.getHistory)
 
 router.post('/signup', signInUpController.signUp)
 router.post('/signin', signInUpController.signIn)
+
 
 module.exports = router

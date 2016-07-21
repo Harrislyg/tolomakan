@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   auth_token: { type: String, unique: true },
-  _makans: [{type: mongoose.Schema.Types.ObjectId, ref: 'Makan'}]
+  _makans: [{type: mongoose.Schema.Types.Object, ref: 'Makan'}]
 })
 
 UserSchema.pre('save', function (next) {
