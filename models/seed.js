@@ -735,6 +735,193 @@ var data = [
         'mapId': 'ChIJE3H-ZA0Z2jERpxvI4x1fY_Q',
         'price': 20
       },
+      {
+        'name': 'Otto Ristorante Italiano',
+        'loc': [103.846528, 1.27728],
+        'latitude': 1.27728,
+        'longitude': 103.846528,
+        'address': '32 Maxwell Road, #01-02/03 Maxwell Chambers, Maxwell Chambers, 069115',
+        'type': 'Cafe',
+        'categories': 'Chinese',
+        'mapId': 'ChIJ6-b0GBMZ2jERMOSs_i-W_EY',
+        'price': 5
+      },
+      {
+        'name': 'Dapper Coffe',
+        'loc': [103.846796, 1.280263],
+        'latitude': 1.280263,
+        'longitude': 103.846796,
+        'address': '73 Amoy St, 069892',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJaXTPaA0Z2jER0Xo3ieVQ3-0',
+        'price': 15
+      },
+      {
+        'name': 'The Market Grill',
+        'loc': [103.847188, 1.279952],
+        'latitude': 1.279952,
+        'longitude': 103.847188,
+        'address': '208 Telok Ayer St, Singapore 068642',
+        'type': 'Restaurant',
+        'categories': 'Chinese',
+        'mapId': 'ChIJP-6efA0Z2jERrsKOO8jHd90',
+        'price': 20
+      },
+      {
+        'name': 'Hopscotch Bar',
+        'loc': [103.845722, 1.278277],
+        'latitude': 1.278277,
+        'longitude': 103.845722,
+        'address': '28 Maxwell Rd, #01-04 Red Dot Traffic Building, Red Dot Traffic Building, 069120',
+        'type': 'Restaurant',
+        'categories': 'Korean',
+        'mapId': 'ChIJqStVxBIZ2jER_tEYgpadVGw',
+        'price': 25
+      },
+      {
+        'name': 'Muchachos',
+        'loc': [103.841658, 1.280058],
+        'latitude': 1.280058,
+        'longitude': 103.841658,
+        'address': '22 Keong Saik Road, 089129',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJj6E3fHIZ2jER83dvb1-4YBg',
+        'price': 15
+      },
+      {
+        'name': 'Lime House',
+        'loc': [103.841715, 1.279684],
+        'latitude': 1.279684,
+        'longitude': 103.841715,
+        'address': '2 Jiak Chuan Rd, 089260',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJ8QACgW0Z2jERd6XijkzoaFg',
+        'price': 5
+      },
+      {
+        'name': 'Luxe Sydney',
+        'loc': [103.841485, 1.279102],
+        'latitude': 1.279102,
+        'longitude': 103.841485,
+        'address': '1 Keong Saik Road #01-04 The Working Capitol Building, The Working Capitol, 089109',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJKzgDm20Z2jER-afMKsumo_8',
+        'price': 20
+      },
+      {
+        'name': 'The Study',
+        'loc': [103.841647, 1.28052],
+        'latitude': 1.28052,
+        'longitude': 103.841647,
+        'address': '49 Keong Saik Rd, 089153',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJf4lAYHIZ2jERZdueU0XUaKo',
+        'price': 35
+      },
+      {
+        'name': 'in Italy',
+        'loc': [103.841968, 1.278308],
+        'latitude': 1.278308,
+        'longitude': 103.841968,
+        'address': '38 Craig Rd, 089676',
+        'type': 'Cafe',
+        'categories': 'Italian',
+        'mapId': 'ChIJx40NCm0Z2jERgqLycKz3ABM',
+        'price': 15
+      },
+      {
+        'name': 'Roosevelt Diner & Bar',
+        'loc': [103.824935, 1.276209],
+        'latitude': 1.276209,
+        'longitude': 103.824935,
+        'address': '331 New Bridge Road #01-04, 099764',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJ2Qc3tmMZ2jER9KKj8cw2jUA',
+        'price': 30
+      },
+      {
+        'name': 'Boca',
+        'loc': [103.841019, 1.278769],
+        'latitude': 1.278769,
+        'longitude': 103.841019,
+        'address': '6 Bukit Pasoh Rd, 089820',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJBUsrkW0Z2jERVp7hmA99f1I',
+        'price': 15
+      },
+      {
+        'name': 'Yi Xin Vegetarian',
+        'loc': [103.843848, 1.283032],
+        'latitude': 1.283032,
+        'longitude': 103.843848,
+        'address': '39 Temple St, 058584',
+        'type': 'Cafe',
+        'categories': 'Vegetarian',
+        'mapId': 'ChIJc6_nO3MZ2jER1NI6vhX2KHg',
+        'price': 15
+      },
+      {
+        'name': 'Chiew Kee Noodle House',
+        'loc': [103.845125, 1.284141],
+        'latitude': 1.284141,
+        'longitude': 103.845125,
+        'address': '32 Upper Cross St, 058339',
+        'type': 'Coffeeshop',
+        'categories': 'Chinese',
+        'mapId': 'ChIJ1yOGqwwZ2jERp9A4fXsdyqM',
+        'price': 5
+      },
+      {
+        'name': 'Sawasdee Thai Food',
+        'loc': [103.844681, 1.283352],
+        'latitude': 1.283352,
+        'longitude': 103.844681,
+        'address': '32 Pagoda St, 059191',
+        'type': 'Restaurant',
+        'categories': 'Thai',
+        'mapId': 'ChIJG-PuSnMZ2jERsgTVglu8rgc',
+        'price': 25
+      },
+      {
+        'name': 'YOLO',
+        'loc': [103.844552, 1.275185],
+        'latitude': 1.275185,
+        'longitude': 103.844552,
+        'address': '01-01, 12 Gopeng St, 078877',
+        'type': 'Cafe',
+        'categories': 'Western',
+        'mapId': 'ChIJHc46qmwZ2jERDGu-vS1WZIU',
+        'price': 15
+      },
+      {
+        'name': 'Napoleon Food & Wine Bar',
+        'loc': [103.847211, 1.280002],
+        'latitude': 1.280002,
+        'longitude': 103.847211,
+        'address': '206 Telok Ayer St, 068641',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJJU9vew0Z2jER9NWHMktgZQI',
+        'price': 15
+      },
+      {
+        'name': 'Binomio',
+        'loc': [103.842299, 1.278053],
+        'latitude': 1.278053,
+        'longitude': 103.842299,
+        'address': '20 Craig Rd, Craig Place #01-02, 089692',
+        'type': 'Restaurant',
+        'categories': 'Western',
+        'mapId': 'ChIJgQZtD20Z2jERWAd5FCfwaLk',
+        'price': 50
+      }
     ]
   }
 ]
