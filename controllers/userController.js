@@ -61,7 +61,7 @@ function postHistory (req, res, next) {
       console.log('userMakans', req.currentUser)
       console.log(makan[0].name)
       if (req.currentUser._makans[i].name === makan[0].name) {
-        return res.status(401).json({error: 'Makan alreadyexist'})
+        return res.status(401).json({error: 'Makan already exist'})
       }
     }
     req.currentUser._makans.push(makan[0])
