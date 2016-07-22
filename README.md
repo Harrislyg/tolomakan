@@ -21,9 +21,12 @@ Here is the Client side of the app: [Toko Makan HTML](https://arieltsq.github.io
 - express
 - MongoDB (provided by Mlab)
 
-## (Potential) Dependencies
-* geocoder
-* geolib
+## Additional Dependencies
+### Google API
+- helps us to render a map
+- calculate the route based on transport mode
+- coupling with .near method found in mongoose, we are able to find the places (latitude and longitude) within the 1km radius.
 
 ## API used in this project
-Self-sourced and populated
+Google  API
+Self-sourced and populated (with much dedication from Peifen)
